@@ -80,6 +80,6 @@ namespace Dependencies.SubmodulesLoader
 			=> $"{Application.dataPath}/Dependencies/{submoduleFolder}";
 		
 		static string SubModuleDirInGit(string submoduleFolder)
-			=> $"{Application.dataPath}/../../.git/modules/{ProjectFolderName()}/Assets/Dependencies/AnalyticsImplementation/{submoduleFolder}";
+			=> $"{Application.dataPath}/../../.git/modules/{ProjectFolderName()}/Assets/Dependencies/{submoduleFolder}";
 	}
 }

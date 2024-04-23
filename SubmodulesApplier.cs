@@ -14,20 +14,17 @@ namespace Dependencies.SubmodulesLoader
 					AddSubmodule(submoduleGroup.MainModule);
 					foreach (var submoduleChild in submoduleGroup.ChildModules)
 					{
-						var submoduleChildCopy = SubmoduleGroupChildWithParentPath(submoduleChild, submoduleGroup.MainModule);
-
-						if (submoduleChildCopy.Enabled)
-							AddSubmodule(submoduleChildCopy);
+						if (submoduleChild.Enabled)
+							AddSubmodule(submoduleChild);
 						else
-							RemoveSubmodule(submoduleChildCopy);
+							RemoveSubmodule(submoduleChild);
 					}
 				}
 				else
 				{
 					foreach (var submoduleChild in submoduleGroup.ChildModules)
 					{
-						var submoduleChildCopy = SubmoduleGroupChildWithParentPath(submoduleChild, submoduleGroup.MainModule);
-						RemoveSubmodule(submoduleChildCopy);
+						RemoveSubmodule(submoduleChild);
 					}
 					RemoveSubmodule(submoduleGroup.MainModule);
 				}
